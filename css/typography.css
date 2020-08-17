@@ -1,5 +1,104 @@
 /* Scss Document */
+.text-center {
+  text-align: center; }
+
+html {
+  font-family: 'Mukta', Gill Sans, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  box-sizing: border-box; }
+
 body {
-  font-family: 'Mukta', sans-serif;
-  font-size: 16px;
-  line-height: 1.3; }
+  background-image: url("../img/lineatura.png");
+  background-color: #E9EAEF;
+  color: #2B2B2B;
+  margin-top: 27px; }
+
+table h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0; }
+
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 6rem !important;
+  padding-bottom: 3rem;
+  margin-bottom: -1px; }
+
+h2, h3 {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin: -8px 0 8px 0;
+  color: #E80000; }
+
+h4 {
+  font-size: 1rem;
+  text-transform: uppercase; }
+
+h5 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #AFAFAF; }
+
+.subheading {
+  display: block;
+  font-weight: 300; }
+
+p {
+  font-weight: 300; }
+
+b {
+  font-weight: 500; }
+
+strong {
+  font-weight: 500;
+  background: #E80000;
+  color: white; }
+
+a {
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #E80000;
+  text-decoration: none; }
+
+a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 2px;
+  width: 100%;
+  background: #E80000; }
+
+a:visited,
+a.visited {
+  color: #AFAFAF; }
+
+a:visited::after,
+a.visited:after {
+  background: #AFAFAF; }
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-top: 1px solid #2B2B2B;
+  border-bottom: 1px solid #2B2B2B;
+  margin-bottom: 27px;
+  text-align: left; }
+
+thead > tr {
+  border-bottom: 3px solid #2B2B2B;
+  height: 53px; }
+
+th {
+  font-weight: 500;
+  text-transform: uppercase; }
+
+td {
+  border-bottom: 1px solid #2B2B2B;
+  vertical-align: top;
+  padding-top: 2rem;
+  padding-bottom: 17px; }

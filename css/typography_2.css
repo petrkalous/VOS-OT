@@ -1,0 +1,30 @@
+/*
+ * Config
+*/
+/*
+ * Solution 1
+*/
+.rhythm-s {
+  font-size: 13px;
+  position: relative;
+  top: 7px; }
+
+.rhythm-m {
+  font-size: 16px;
+  position: relative;
+  top: 7px;
+  column-count: 2; }
+
+/*
+ * Meta
+*/
+html {
+  background: linear-gradient(rgba(255, 0, 0, 0.15), rgba(255, 0, 0, 0.15) 1px, transparent 1px);
+  background-size: 1px 24px; }
+
+body {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  line-height: 24px; }

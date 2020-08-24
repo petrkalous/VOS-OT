@@ -1,0 +1,57 @@
+// See https://pilot.co/blog/implementing-baseline-rhythm-in-css/
+
+/*
+ * Config
+*/
+
+$line-height: 24px;
+
+$font-sizes:  (s: 13px, m: 16px, l: 19px, xl: 27px);
+$cap-heights: (s: 0.8,  m: 0.6,  l: 0.68, xl: 0.68);
+
+// Accepts `s`, `m`, `l`, or `xl`
+@function rhythm-shift($size-name) {
+  $font-size: map-get($font-sizes, $size-name);
+  $cap-height: map-get($cap-heights, $size-name);
+
+  $offset: ($line-height - $cap-height * $font-size) / 2;
+  @return round($offset);
+}
+
+/*
+ * Solution 1
+*/
+
+$offset-s: rhythm-shift(s);
+$offset-m: rhythm-shift(m);
+
+.rhythm-s {
+  font-size: map-get($font-sizes, s);
+  position: relative;
+  top: $offset-s;
+}
+
+.rhythm-m {
+  font-size: map-get($font-sizes, m);
+  position: relative;
+  top: $offset-m;
+  column-count: 2;
+}
+
+/*
+ * Meta
+*/
+
+html {
+  $grid-color: rgba(red, 0.15);;
+  background: linear-gradient($grid-color, $grid-color 1px, transparent 1px);
+  background-size: 1px $line-height;
+}
+
+body {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: (2 * $line-height) $line-height;
+  font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  line-height: $line-height;
+}

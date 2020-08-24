@@ -4,6 +4,9 @@ $grey-20: #E9EAEF;
 $grey-30: #AFAFAF;
 $grey-80: #2B2B2B;
 
+$font-light: 200;
+$font-medium: 500;
+$font-bold: 800;
 .text-center {
 	text-align: center;
 }
@@ -17,17 +20,16 @@ body {
 	background-image: url("../img/lineatura.png");
 	background-color: $grey-20;
 	color: $grey-80;
-	margin-top: 27px;
 }
 table h1, h2, h3, h4, h5 {
+	display: inline;
 	padding: 0;
 	margin: 0;
+	font-weight: $font-medium;
 }
 h1 {
 	font-size: 4rem;
-	font-weight: 500;
 	line-height: 6rem !important;
-	padding-bottom: 3rem;
 	margin-bottom: -1px;
 }
 h2,h3 {
@@ -45,18 +47,38 @@ h5 {
 	text-transform: uppercase;
 	color: $grey-30;
 }
+p {
+	margin-top: 8px;
+}
+.subheading,
+p,
+a {
+	font-weight: $font-light;
+}
+
 .subheading {
 	display: block;
-	font-weight: 300;
 }
-p {
-	font-weight: 300;
+p {}
+p.sub_h3 {
+	position: relative;
+	margin-bottom: 2rem;
+	max-width: 30%;
+}
+p.sub_h3:after {
+	content:"";
+	position: absolute;
+	height: 3px;
+	width: 2rem;
+	margin-top: 1rem;
+	display: block;
+	background-color: $red;
 }
 b {
-	font-weight: 500;
+	font-weight: $font-medium;
 }
 strong {
-	font-weight: 500;
+	font-weight: $font-medium;
 	background: $red;
 	color: white;
 }
@@ -78,13 +100,47 @@ a:after {
 	width: 100%;
 	background: $red;
 }
-a:visited,
-a.visited {
-	color: $grey-30;
+/* Lists */
+ul, ol {
+	font-weight: 300;
 }
-a:visited::after,
-a.visited:after {
-	background: $grey-30;
+ul {
+	list-style: none;
+}
+ul li {
+	position: relative;
+}
+ul li:before {
+	content: "/";
+	position: absolute;
+	left: -1rem;
+	top: 0;
+	display: block;
+	color: $red;
+	font-weight: $font-medium;
+}
+ol {
+	counter-reset: item;
+	list-style: none;
+}
+ol > li {
+	position: relative;
+	counter-increment: item;
+	color: $grey-80;
+
+}
+ol > li:before {
+	content:"0" counter(item);
+    position:absolute;
+    left:-2.6rem;
+    width:2rem;
+    text-align:right;
+	font-weight: $font-medium;
+	color: $red;
+}
+ol > li:nth-of-type(n+10)::before {
+	content: counter(item);
+	color: $red;
 }
 
 /* Tables */
@@ -94,7 +150,7 @@ table {
   	width: 100%;
 	border-top: 1px solid $grey-80;
 	border-bottom: 1px solid $grey-80;
-	margin-bottom: 27px;
+	margin-bottom: 6rem;
 	text-align: left;
 	
 }
@@ -102,8 +158,10 @@ thead > tr {
 	border-bottom: 3px solid $grey-80;
 	height: 53px;
 }
+td, th {
+	font-weight: 300;
+}
 th {
-	font-weight: 500;
 	text-transform: uppercase;
 }
 td {
